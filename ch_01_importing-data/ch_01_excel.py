@@ -36,5 +36,22 @@ percapitagdp.head()
 percapitagdp.dtypes
 
 #[]
-#
+# genertating summary statistics
 percapitagdp.describe()
+
+#[]
+# looking to remove rows where all the yearly gdp values are missing
+percapitagdp.dropna(subset=percapitagdp.columns[1:],how='all',inplace=True)
+percapitagdp.describe()
+percapitagdp.shape
+
+#[]
+# will set the metropolitan area as the index
+#before doing so must confirm if each metro area is unique
+percapitagdp.metro.count()
+percapitagdp['metro'].nunique()
+percapitagdp.set_index('metro',inplace=True)
+percapitagdp.head()
+
+#[]
+percapitagdp.iloc[15:20,]
