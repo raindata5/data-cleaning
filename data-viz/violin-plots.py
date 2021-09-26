@@ -16,8 +16,8 @@ covidtotals = pd.read_csv("data/covidtotals.csv", parse_dates=["lastdate"])
 covidtotals.set_index("iso_code", inplace=True)
 
 
-#[]
-#
+#[2]
+# a violin plot showing what could be safely considered a normal distribution (sat verbal scores)
 
 sns.violinplot( y = nls97.satverbal, color='wheat',orient='v') #resolving back to horizontal plot ,so must specify y
 plt.title("Violin Plot of SAT Verbal Score")
@@ -31,23 +31,23 @@ plt.text(-0.4, 500, 'frequency', horizontalalignment='center', size='x-small')
 plt.show()
 
 
-#[]
-#
+#[3]
+# showing summary statistics for 2 consecutive years
 nls97.loc[:,['weeksworked16','weeksworked17']].describe()
 
-#[]
-#
+#[4]
+# plotting the distribtution of the previous 2 columns to see differences or similarities a bit better
 
 myplt = sns.violinplot(data=nls97.loc[:, ['weeksworked16','weeksworked17']])
 myplt.set_title("Violin Plots of Weeks Worked")
 myplt.set_xticklabels(["Weeks Worked 2016","Weeks Worked 2017"])
 plt.show()
 
-#[]
-#
+#[5]
+# plotting distribution by maritalstatusreduce and gender
 # while these category labels are of great importance to help create the plot we will reduce them
-nls97["maritalstatusreduce"] = nls97.maritalstatus.replace(['Married','Never-married','Divorced','Separated','Widowed'],['Married','Never Married','Not Married','Not Married','Not Married'])
-sns.violinplot(nls97.gender, nls97.wageincome, hue=nls97.maritalstatusreduce,scale='count') #double-check the scale
+nls97["maritalstatusreduce"] = nls97.maritalstatus.replace(['Married','Never-married','Divorced','Separated','Widowed'],['Married','Never Married','Not Married','Not Married','Not Married']) #using replace with lists of varying lengths
+sns.violinplot(nls97.gender, nls97.wageincome, hue=nls97.maritalstatusreduce,scale='count') # scale on count so each violin proportional to observations in it's distribution
 plt.title("Violin Plots of Wage Income by Gender and Marital Status")
 plt.xlabel('Gender')
 plt.ylabel('Wage Income 2017')
@@ -55,7 +55,7 @@ plt.legend(title="", loc="upper center", framealpha=0, fontsize=8)
 plt.tight_layout()
 plt.show()
 
-#[]
+#[6]
 #
 # nls97 = nls97.sort_values('highestdegree')
 # alternative to getting categories to be sorted on plot
@@ -68,5 +68,3 @@ plt.tight_layout()
 plt.show()
 
 
-#[]
-#
