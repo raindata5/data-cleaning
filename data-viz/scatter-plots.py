@@ -60,7 +60,7 @@ plt.ylabel("Average Temperature")
 plt.show()
 
 #[6]
-#
+#using lmplot to see a bit more features of the data
 
 landtemps['elevation_group'] = np.where(landtemps.elevation<=1000, 'low','high')
 sns.lmplot(x='latabs',y = 'avgtemp' , hue="elevation_group", palette=dict(low="blue", high="red"), legend_out=False, data=landtemps)
@@ -73,13 +73,13 @@ plt.tight_layout()
 plt.show()
 
 
-#[]
-# extreme values above the reg line
+#[7]
+# inspecting extreme values above the reg line for both high and low elevation locations
 high.loc[(high.latabs>38) & (high.avgtemp>=18),['station','country','latabs','elevation','avgtemp']]
 low.loc[(low.latabs>47) & (low.avgtemp>=14),['station','country','latabs','elevation','avgtemp']]
 
-#[]
-# extreme values below the reg line
+#[8]
+# inspecting extreme values below the reg line for both high and low elevation locations
 
 high.loc[(high.latabs<5) & (high.avgtemp<18),['station','country','latabs','elevation','avgtemp']]
 low.loc[(low.latabs<50) & (low.avgtemp<-9),['station','country','latabs','elevation','avgtemp']]
