@@ -76,3 +76,5 @@ firstcase = covidcases.loc[covidcases.new_cases>0,['location','casedate']]. #fir
 covidcases = pd.merge(covidcases, firstcase, left_on=['location'], right_on=['location'], how="left")
 covidcases['dayssincefirstcase'] = covidcases.casedate - covidcases.firstcasedate
 covidcases.dayssincefirstcase.describe()
+
+

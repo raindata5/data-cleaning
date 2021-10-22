@@ -17,7 +17,7 @@ bs = BeautifulSoup(webpage.text,'html.parser')
 #taking the column names to create a sort of list
 theadrows = bs.find('table',{'id':'tblDeaths'}).thead.find_all('th')
 type(theadrows)
-#creating a true list fo the column names
+#creating a true list for the column names
 labelcols = [j.get_text() for j in theadrows]
 labelcols[0] = "rowheadings"
 labelcols

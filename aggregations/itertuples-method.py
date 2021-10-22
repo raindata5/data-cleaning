@@ -39,7 +39,7 @@ covidtotals = pd.DataFrame(rowlist)
 covidtotals.head()
 
 #[5]
-# preparing data by sorting on location and month and dropping rows that hav enull in temperature
+# preparing data by sorting on location and month and dropping rows that have null in temperature
 ltbrazil = ltbrazil.sort_values(['station','month'])
 ltbrazil = ltbrazil.dropna(subset=['temperature'])
 

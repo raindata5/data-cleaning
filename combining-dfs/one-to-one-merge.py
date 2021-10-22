@@ -60,7 +60,7 @@ nlsnew = pd.merge(nls97, nls97add, on=['originalid'], how="outer")
 nlsnew.loc[nlsnew.originalid>9999, ['originalid','gender','birthyear','motherage','parentincome']]
 
 #[10]
-#
+# function to check for mismatches
 def check_merge(left_df, right_df ,idvar):
     left_df['inleft'] = 'Y'
     right_df['inright'] = 'Y'

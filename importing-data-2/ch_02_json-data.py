@@ -12,6 +12,7 @@ pd.set_option('display.max_columns', 8)
 #loading in data with json library, looking at shape, and looking at some of the data
 
 with open('data/allcandidatenewssample.json') as f :
+    print(type(f))
     candidatenews = json.load(f)
 
 len(candidatenews)

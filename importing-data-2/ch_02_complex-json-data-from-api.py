@@ -20,6 +20,9 @@ camcollectionsdf = pd.json_normalize(camcollections['data'],'citations',['access
 camcollectionsdf.head(2).T
 
 #[]
+#
+pd.json_normalize(camcollections['data'],'provenance',['accession_number','technique',['exhibitions','current']]).columns
+#[]
 # inspecting data to find method to getting only the initial creator and then doing so
 creator = camcollectionsdf[:1].creators[0]
 type(creator[0])

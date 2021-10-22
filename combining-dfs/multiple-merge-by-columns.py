@@ -11,7 +11,7 @@ nls97weeksworked = pd.read_csv("data/nls97weeksworked.csv")
 nls97colenr = pd.read_csv("data/nls97colenr.csv")
 
 #[2]
-# exploring the data and confirming the amount of unique values in first df
+# exploring the data and confirming the amount of unique values in first df (with 5 years for each individual this would bring us to our current row count)
 nls97weeksworked.sample(10,random_state=42)
 
 nls97weeksworked.shape
